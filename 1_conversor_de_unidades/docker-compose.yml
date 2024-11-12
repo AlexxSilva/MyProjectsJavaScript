@@ -1,0 +1,11 @@
+services:
+  web:
+    image: imagejs                # Nome da imagem que será construída
+    build:
+      context: .                  # Diretório do Dockerfile
+      dockerfile: Dockerfile      # Nome do Dockerfile
+    container_name: containerjs # Nome fixo do container
+    ports:
+      - "8080:80"                 # Mapeamento de portas
+    volumes:
+      - .:/usr/share/nginx/html   # Sincronização dos arquivos locais
